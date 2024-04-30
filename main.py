@@ -5,18 +5,26 @@ Created on: Apr 2024
 This module calculates the GCF of two numbers
 """
 
-def volume_cylinder(number1: int, numbmer2: int) -> int:
+
+def greatest_common_factor(number1: int, number2: int) -> int:
     """This function calculates the GCF of two numbers, returns GCF."""
 
     # process
+    # find the smallest number
     if number1 > number2:
         counter = number2
     else:
         counter = number1
 
-    while counter > 0
+    # find the GCF
+    while counter > 0:
         divider1 = number1 / counter
         divider2 = number2 / counter
+        if divider1 % 1 == 0 and divider2 % 1 == 0:
+            gcf = counter
+            break
+        else:
+            counter -= 1
 
     return gcf
 
@@ -25,6 +33,7 @@ def main() -> None:
     """The main() function gets input, calls other functions, shows output,
     returns None."""
 
+    # input
     number1 = input("Enter an integer: ")
     number2 = input("Enter another integer: ")
 
@@ -39,13 +48,9 @@ def main() -> None:
         gcf = greatest_common_factor(number1, number2)
 
         # output
-        print(
-            "The volume of a cylinder with radius" +
-            f" {radius} cm and height {height} cm is {volume} cm³."
-        )
+        print(f"The greatest common factor is {gcf}.")
 
-
-    print("\n\nDone.")
+    print("\nDone.")
 
 
 if __name__ == "__main__":
