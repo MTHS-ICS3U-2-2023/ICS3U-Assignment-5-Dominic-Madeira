@@ -30,13 +30,10 @@ def main() -> None:
 
         # find the GCF
         while counter > 0:
-            divider1 = number1 / counter
-            divider2 = number2 / counter
-            if divider1 % 1 == 0 and divider2 % 1 == 0:
+            if number1 % counter == 0 and number2 % counter == 0:
                 gcf = counter
                 break
-            else:
-                counter -= 1
+            counter -= 1
 
         # output
         print(f"\nThe greatest common factor is {gcf}.")
