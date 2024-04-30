@@ -7,7 +7,7 @@ This module calculates the GCF of two numbers
 
 
 def main() -> None:
-    """The main() function gets input, calls other functions, shows output,
+    """The main() function calculates the GCF of two numbers from user input,
     returns None."""
 
     # input
