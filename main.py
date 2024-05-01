@@ -20,23 +20,25 @@ def main() -> None:
     except ValueError:
         print("\nYou did not enter a valid number.")
     else:
-
         # process
-        # find the smallest number
-        if number1 > number2:
-            counter = number2
+        # check if both numbers are greater than 0
+        if number1 > 0 and number2 > 0:
+            # find the smallest number
+            if number1 > number2:
+                gcf_counter = number2
+            else:
+                gcf_counter = number1
+
+            # find the GCF
+            while gcf_counter > 0:
+                if number1 % gcf_counter == 0 and number2 % gcf_counter == 0:
+                    break
+                gcf_counter -= 1
+
+            # output
+            print(f"\nThe greatest common factor is {gcf_counter}.")
         else:
-            counter = number1
-
-        # find the GCF
-        while counter > 0:
-            if number1 % counter == 0 and number2 % counter == 0:
-                gcf = counter
-                break
-            counter -= 1
-
-        # output
-        print(f"\nThe greatest common factor is {gcf}.")
+            print(f"\nBoth numbers must be greater than 0")
 
     print("\nDone.")
 
